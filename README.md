@@ -1,19 +1,16 @@
-# Fds
+# Forro-de-segunda
 
-To start your Phoenix server:
+Sistema para gestão do projeto Forró de Segunda
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Dependencias necessárias
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+1. Docker/Docker Compose
+2. Make
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Para iniciar o projeto:
 
-## Learn more
+  * Inicie os containers com `docker-compose up -d`
+  * Faça o get das dependencies e a configuração inicial do banco com `make setup`
+  * Inicie o servidor da aplicação com `make server`
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Agora você pode visitar [`localhost:4000`](http://localhost:4000) pelo seu navegador.
