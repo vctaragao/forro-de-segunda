@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+    postgres:
+        image: postgres:14.2
+        container_name: fds-postgres-dev
+        environment:
+            - POSTGRES_DB=fds
+            - POSTGRES_USER=fds
+            - POSTGRES_PASSWORD=fds
+            - TZ=America/Sao_Paulo
+        expose:
+            - "5432"
+
+    elixir:
+        build: .
+        container_name: fds-app-dev
+        tty: true
+        links:
+            - postgres
+        environment:
+            - DB_HOST=postgres
+            - DB_NAME=fds
+            - DB_USER=fds
+            - DB_PASS=fds
+        volumes:
+            - .:/app
+        ports:
+            - "0.0.0.0:4000:4000"
+        depends_on:
+            - postgres
