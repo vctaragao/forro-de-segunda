@@ -12,3 +12,6 @@ migrate:
 
 db-reset:
 	docker exec fds-app-dev bash -c "mix ecto.reset"
+
+server:
+	docker exec fds-app-dev bash -c "mix phx.server"
